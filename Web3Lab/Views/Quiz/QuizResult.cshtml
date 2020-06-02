@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "QuizResult";
+}
+
+<h1>QuizResult</h1>
+@model Web3Lab.Models.Answer
+
+<div class="CalcMenu">
+    <h1>Right Answers @Model.correctAnswer out @Model.answers.Count </h1>
+    <ul>
+        @foreach (var p in Model.answers)
+        {
+            <li>@p.firstValue @p.operand @p.secondValue = @p.answer</li>
+        }
+    </ul>
+</div>

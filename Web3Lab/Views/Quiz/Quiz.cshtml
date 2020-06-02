@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Quiz";
+}
+
+<h1>Quiz</h1>
+
+@model Web3Lab.Models.Quiz
+<div class="CalcMenu">
+    <h2>@Model.firstValue  @Model.operand @Model.secondValue = ?</h2>
+    <form asp-antiforgery="true" asp-action="Quiz" asp-controller="Quiz" method="post">
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <input name="answer" type="text">  <span asp-validation-for="answer"></span>
+        <br>
+        <input type="submit" value="Next" name="Action">
+        <input type="submit" value="Finish" name="Action">
+        <input style="display:none" name="firstValue" value="@Model.firstValue">
+        <input style="display:none" name="operand" value="@Model.operand">
+        <input style="display:none" name="secondValue" value="@Model.secondValue">
+    </form>
+</div>
